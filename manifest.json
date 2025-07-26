@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "My Redirect",
+  "version": "1.0",
+  "description": "Redirect blacklisted URLs to a different page",
+  "permissions": ["tabs", "<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://m.youtube.com/*"],
+      "js": ["inject.js"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "my-redirect@fpacheco.com"
+    }
+  }
+}
